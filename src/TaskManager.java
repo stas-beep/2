@@ -46,8 +46,13 @@ public class TaskManager {
         System.out.println("Завдання не знайдено.");
     }
 
-    public void sortTasks() {
+    public void sortByDate() {
         tasks.sort(Comparator.comparing(Task::getDateTime));
         System.out.println("Список завдань відсортовано за датою.");
+    }
+
+    public void sortByTitle() {
+        tasks.sort(Comparator.comparing(Task::getTitle, String.CASE_INSENSITIVE_ORDER));
+        System.out.println("Список завдань відсортовано за назвою.");
     }
 }

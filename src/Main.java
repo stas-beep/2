@@ -13,11 +13,12 @@ public class Main {
             System.out.println("4. Оновити завдання");
             System.out.println("5. Пошук завдання");
             System.out.println("6. Сортувати за датою");
-            System.out.println("7. Вихід");
+            System.out.println("7. Сортувати за назвою");
+            System.out.println("8. Вихід");
             System.out.print("Виберіть опцію: ");
 
             int choice = scanner.nextInt();
-            scanner.nextLine(); // Очистка буфера
+            scanner.nextLine();
 
             switch (choice) {
                 case 1:
@@ -36,9 +37,12 @@ public class Main {
                     searchTask();
                     break;
                 case 6:
-                    taskManager.sortTasks();
+                    taskManager.sortByDate();
                     break;
                 case 7:
+                    taskManager.sortByTitle();
+                    break;
+                case 8:
                     System.out.println("Програма завершена.");
                     return;
                 default:
